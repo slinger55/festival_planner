@@ -1,0 +1,12 @@
+<h1>Edit Act</h1>
+<%= simple_form_for @act, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, input_html: { value: @act.name } %>
+  <%= f.input :time, input_html: { value: @act.time }, :hint => "Format 13:00 (24-Hour)" %>
+  <%= f.input :stage, input_html: { value: @act.stage } %>
+  <% if @act.want_to_see %>
+    <%= f.input :want_to_see, input_html: { value: '1' }, :as => :boolean %>
+  <% else %>
+    <%= f.input :want_to_see, :as => :boolean %>
+  <% end %>
+  <%= f.button :submit %>
+<% end %>

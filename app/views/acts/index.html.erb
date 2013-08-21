@@ -1,0 +1,8 @@
+<h1>Create New Act</h1>
+<%= simple_form_for @act, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :time, :hint => "Format 13:00 (24-Hour)" %>
+  <%= f.input :stage %>
+  <%= f.input :want_to_see, :as => :boolean %>
+  <%= f.button :submit %>
+<% end %>
